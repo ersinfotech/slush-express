@@ -1,0 +1,30 @@
+{
+  "name": "slush-express",
+  "version": "0.0.0",
+  "description": "slush-express",
+  "main": "slushfile.js",
+  "dependencies": {
+    "gulp": "~3.6.2",
+    "gulp-conflict": "~0.1.1",
+    "gulp-install": "~0.1.5",
+    "gulp-rename": "~1.2.0",
+    "gulp-template": "~0.1.1",
+    "inquirer": "~0.5.0",
+    "coffee-script": "~1.7.1",
+    "underscore.string": "~2.3.3",
+    "underscore": "~1.6.0",
+    "bluebird": "~2.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.ers.local:generator/slush-express.git"
+  },
+  "keywords": [
+    "slushgenerator"
+  ],
+  "author": "",
+  "license": "MIT"
+}

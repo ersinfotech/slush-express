@@ -1,9 +1,8 @@
 
-module.exports = (res) ->
-  res.send [
-    id: 1
-    name: 'hello'
-  ,
-    id: 2
-    name: 'world'
-  ]
+module.exports = (Example, res, next) ->
+  Example
+  .find()
+  .execAsync()
+  .then (data) ->
+    res.send data
+  .catch next

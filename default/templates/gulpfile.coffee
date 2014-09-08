@@ -1,16 +1,19 @@
+{spawn} = require 'child_process'
+
 gulp = require 'gulp'
 coffeelint = require 'gulp-coffeelint'
 cache = require 'gulp-cached'
 plumber = require 'gulp-plumber'
-shell = require 'gulp-shell'
 {argv} = require 'yargs'
 
-env = if argv.P then 'production' else 'development'
+process.env.NODE_ENV = if argv.P then 'production' else 'development'
+
+node = null
 
 paths =
   coffee: [
     '**/*.coffee'
-    '!node_modules/**/*.coffee'
+    '!**/node_modules/**/*.coffee'
   ]
 
 gulp.task 'lint', ->
@@ -21,10 +24,10 @@ gulp.task 'lint', ->
   .pipe coffeelint.reporter()
 
 gulp.task 'http', ->
-  do shell.task "NODE_ENV=#{env} node-dev index.js"
-  false
+  node?.kill()
+  node = spawn "node", ["index.js"], stdio: 'inherit'
 
 gulp.task 'watch', ['http'], ->
-  gulp.watch paths.coffee, ['lint']
+  gulp.watch paths.coffee, ['http', 'lint']
 
 gulp.task 'default', ['watch']

@@ -1,13 +1,20 @@
-time = process.hrtime()
+require '../init'
 
 express = require 'express'
+cookieParser = require 'cookie-parser'
+cookieSession = require 'cookie-session'
+bodyParser = require 'body-parser'
+multer = require 'multer'
 config = require 'config'
-moment = require 'moment'
 
 app = module.exports = express()
 
-app.use require './lib'
+app.use bodyParser.json()
+app.use bodyParser.urlencoded extended: false
+app.use multer()
+app.use cookieParser()
+app.use cookieSession secret: config.session.secret
 
-app.listen config.http.port, ->
-  time = process.hrtime time
-  console.log "#{moment().format 'YYYY-MM-DD HH:mm:ss'} http service is listening on port #{config.http.port} in #{process.env.NODE_ENV} mode used #{time[0]}.#{time[1]} seconds"
+require '../models'
+
+app.use require './lib'

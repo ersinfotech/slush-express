@@ -1,14 +1,15 @@
-{spawn} = require 'child_process'
+#
+# gulp任務配置
+#
 
 gulp = require 'gulp'
 coffeelint = require 'gulp-coffeelint'
 cache = require 'gulp-cached'
 plumber = require 'gulp-plumber'
+shell = require 'gulp-shell'
 {argv} = require 'yargs'
 
-process.env.NODE_ENV = if argv.P then 'production' else 'development'
-
-node = null
+env = if argv.P then 'production' else 'development'
 
 paths =
   coffee: [
@@ -16,6 +17,7 @@ paths =
     '!**/node_modules/**/*.coffee'
   ]
 
+# coffee script語法檢查
 gulp.task 'lint', ->
   gulp.src paths.coffee
   .pipe plumber()
@@ -23,11 +25,14 @@ gulp.task 'lint', ->
   .pipe coffeelint()
   .pipe coffeelint.reporter()
 
+# 起動服務，文件有改動就會自動重啟
 gulp.task 'http', ->
-  node?.kill()
-  node = spawn "node", ["index.js"], stdio: 'inherit'
+  do shell.task "NODE_ENV=#{env} node-dev index.js"
+  false
 
+# 監測文件，每次改動都會進行語法檢查
 gulp.task 'watch', ['http'], ->
-  gulp.watch paths.coffee, ['http', 'lint']
+  gulp.watch paths.coffee, ['lint']
 
+# 默認任務
 gulp.task 'default', ['watch']

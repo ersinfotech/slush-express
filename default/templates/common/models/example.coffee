@@ -1,7 +1,14 @@
-mongoose = require 'mongoose'
+#
+# Example
+#
 
-db = require './_mongo'
-app = require '../http'
+mongoose = require 'mongoose'
+config = require 'config'
+
+db = require '../connections/mongo'
+app = require config.basename + '/http'
+
+ObjectId = mongoose.Schema.Types.ObjectId
 
 schema = new mongoose.Schema
   name: String

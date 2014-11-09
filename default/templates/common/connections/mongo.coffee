@@ -1,8 +1,14 @@
+#
+# Mongodb connection對象
+#
+
 mongoose = require 'mongoose'
 moment = require 'moment'
 config = require 'config'
 
-connection = module.exports = mongoose.createConnection "mongodb://#{config.mongo.host}:#{config.mongo.port}/#{config.mongo.database}",
+mongoUri = "mongodb://#{config.mongo.host}:#{config.mongo.port}/#{config.mongo.database}"
+
+connection = module.exports = mongoose.createConnection mongoUri,
   server:
     poolSize: config.mongo.poolSize or 5
     keepAlive: 1

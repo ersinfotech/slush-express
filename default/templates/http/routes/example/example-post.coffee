@@ -1,5 +1,8 @@
+#
+# 創建單個Example
+#
 
-module.exports = (Example, res, next) ->
+module.exports = (req, res, next, Example) ->
   new Example
     name: Math.random()
   .saveAsync()

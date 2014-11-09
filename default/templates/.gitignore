@@ -4,6 +4,12 @@ npm-debug.log
 
 bower_components
 node_modules
-public
 
-config.coffee
+config/*
+!config/default.coffee
+
+migrations/.*
+tmp/*
+
+dist
+coverage

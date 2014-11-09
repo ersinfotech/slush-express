@@ -1,5 +1,8 @@
+#
+# 返回Example列表
+#
 
-module.exports = (Example, res, next) ->
+module.exports = (req, res, next, Example) ->
   Example
   .find()
   .execAsync()

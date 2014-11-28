@@ -30,19 +30,15 @@ app.use cookieSession secret: config.session.secret
 # 掛載路由
 app.use require './routes'
 
-#
 # Error handler
-#
-
 app.use (err, req, res, next) ->
   console.error ''
   console.error "[ERROR] #{moment().format('YYYY-MM-DD HH:mm:ss')} Handled error"
   console.error err.stack
 
-  res
-  .status 500
-  .send error: err.message
+  res.status(500).send error: err.message
 
+# Process error handler
 process.on 'uncaughtException', (err) ->
   console.error ''
   console.error "[ERROR] #{moment().format('YYYY-MM-DD HH:mm:ss')} Uncaught exception"

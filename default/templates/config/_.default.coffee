@@ -7,7 +7,7 @@ path = require 'path'
 module.exports =
 
   http:
-    port: process.env.PORT or <%= httpPort %>
+    port: process.env.PORT or <%= port %>
 
   session:
     secret: 'thisissecret'
@@ -21,4 +21,4 @@ module.exports =
     password: null
 
   eaccount:
-    baseUrl: 'http://eaccount.ers.local'
+    baseUrl: 'http://eaccount-api.ers.local'

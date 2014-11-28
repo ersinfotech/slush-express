@@ -22,9 +22,13 @@ gulp.task 'default', ->
       default: '0.0.0'
     ,
       type: 'input'
-      name: 'httpPort'
+      name: 'port'
       message: 'Port used for http develop'
       default: 3000
+    ,
+      type: 'input'
+      name: 'repo'
+      message: 'Repo name. E.g. repoGroup/repoName'
     ,
       type: 'confirm'
       name: 'moveon'
@@ -33,8 +37,9 @@ gulp.task 'default', ->
       resolve
 
   .then (answers) ->
-
     return Promise.reject 'Cancel' unless answers.moveon
+
+    answers.repo or= "#{answers.name}/#{answers.name}"
 
     Promise.all [
       new Promise (resolve, reject) ->

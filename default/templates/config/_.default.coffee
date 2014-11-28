@@ -6,8 +6,6 @@ path = require 'path'
 
 module.exports =
 
-  basename: path.normalize __dirname + '/..'
-
   http:
     port: process.env.PORT or <%= httpPort %>
 
@@ -15,6 +13,7 @@ module.exports =
     secret: 'thisissecret'
 
   mongo:
+    uri: null
     host: 'localhost'
     port: 27017
     database: 'example'

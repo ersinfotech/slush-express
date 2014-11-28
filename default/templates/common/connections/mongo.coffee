@@ -6,7 +6,7 @@ mongoose = require 'mongoose'
 moment = require 'moment'
 config = require 'config'
 
-mongoUri = "mongodb://#{config.mongo.host}:#{config.mongo.port}/#{config.mongo.database}"
+mongoUri = config.mongo.uri or "mongodb://#{config.mongo.host}:#{config.mongo.port}/#{config.mongo.database}"
 
 connection = module.exports = mongoose.createConnection mongoUri,
   server:

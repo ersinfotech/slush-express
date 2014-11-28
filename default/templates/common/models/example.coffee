@@ -3,10 +3,10 @@
 #
 
 mongoose = require 'mongoose'
-config = require 'config'
 
 db = require '../connections/mongo'
-app = require config.basename + '/http'
+
+app = require __base + '/http'
 
 ObjectId = mongoose.Schema.Types.ObjectId
 

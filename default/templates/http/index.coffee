@@ -11,16 +11,16 @@ bodyParser = require 'body-parser'
 multer = require 'multer'
 config = require 'config'
 moment = require 'moment'
+cors = require 'cors'
 
 # 創建express對象
 app = module.exports = express()
 
 # 註冊model到express-di
-require config.basename + '/common/models'
-
-# 需要掛載內部應用的話，掛到http/lib下，e.g. app.use '/oauth', require './lib/eauth-api/http'
+require __base + '/common/models'
 
 # 中間件
+app.use cors()
 app.use bodyParser.json()
 app.use bodyParser.urlencoded extended: false
 app.use multer()

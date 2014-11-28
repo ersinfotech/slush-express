@@ -19,3 +19,6 @@ module.exports =
     database: 'example'
     user: null
     password: null
+
+  eaccount:
+    baseUrl: 'http://eaccount.ers.local'

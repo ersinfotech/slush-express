@@ -9,7 +9,6 @@ cookieParser = require 'cookie-parser'
 cookieSession = require 'cookie-session'
 bodyParser = require 'body-parser'
 multer = require 'multer'
-config = require 'config'
 moment = require 'moment'
 cors = require 'cors'
 
@@ -24,14 +23,15 @@ app.use cors()
 app.use bodyParser.json()
 app.use bodyParser.urlencoded extended: false
 app.use multer()
-app.use cookieParser()
-app.use cookieSession secret: config.session.secret
 
 # 掛載路由
-app.use require './routes'
+app.use require './routes/router'
 
 # Error handler
 app.use (err, req, res, next) ->
+  if err instanceof Error400
+    return res.status(400).send error: err.message
+
   console.error ''
   console.error "[ERROR] #{moment().format('YYYY-MM-DD HH:mm:ss')} Handled error"
   console.error err.stack

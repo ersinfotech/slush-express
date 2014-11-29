@@ -9,9 +9,6 @@ module.exports =
   http:
     port: process.env.PORT or <%= port %>
 
-  session:
-    secret: 'thisissecret'
-
   mongo:
     uri: null
     host: 'localhost'

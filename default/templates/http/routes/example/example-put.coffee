@@ -1,16 +1,16 @@
 #
-# 創建例子
+# 修改例子
 #
 
 module.exports = (req, res, next, Example) ->
+  {exampleId} = req.params
   {name} = req.body
 
   unless name
     return next new Error400 'name required'
 
-  Example.createAsync
+  Example.findByIdAndUpdateAsync exampleId,
     name: name
-  .then (example) ->
-    req.params.exampleId = example._id
+  .then ->
     next()
   .catch next

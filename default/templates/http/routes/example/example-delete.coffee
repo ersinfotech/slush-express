@@ -1,11 +1,11 @@
 #
-# 單筆例子
+# 刪除例子
 #
 
 module.exports = (req, res, next, Example) ->
   {exampleId} = req.params
 
-  Example.findByIdAsync exampleId
+  Example.findByIdAndRemoveAsync exampleId
   .then (example) ->
-    res.send example
+    res.end()
   .catch next

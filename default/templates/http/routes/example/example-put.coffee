@@ -9,8 +9,9 @@ module.exports = (req, res, next, Example) ->
   unless name
     return next new Error400 'name required'
 
-  Example.findByIdAndUpdateAsync exampleId,
+  Example.findByIdAndUpdate exampleId,
     name: name
+  .execAsync()
   .then ->
     next()
   .catch next

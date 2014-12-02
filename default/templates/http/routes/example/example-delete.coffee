@@ -5,7 +5,8 @@
 module.exports = (req, res, next, Example) ->
   {exampleId} = req.params
 
-  Example.findByIdAndRemoveAsync exampleId
+  Example.findByIdAndRemove exampleId
+  .execAsync()
   .then (example) ->
     res.end()
   .catch next

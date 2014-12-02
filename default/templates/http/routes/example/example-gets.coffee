@@ -7,8 +7,7 @@ Promise = require 'bluebird'
 module.exports = (req, res, next, Example) ->
   {name} = req.query
 
-  query = Example
-  .find()
+  query = Example.find()
   .lean()
 
   if name

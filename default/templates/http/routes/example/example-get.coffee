@@ -5,7 +5,8 @@
 module.exports = (req, res, next, Example) ->
   {exampleId} = req.params
 
-  Example.findByIdAsync exampleId
+  Example.findById exampleId
+  .execAsync()
   .then (example) ->
     res.send example
   .catch next

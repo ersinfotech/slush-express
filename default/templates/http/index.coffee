@@ -5,8 +5,6 @@
 require '../init'
 
 express = require 'express'
-cookieParser = require 'cookie-parser'
-cookieSession = require 'cookie-session'
 bodyParser = require 'body-parser'
 multer = require 'multer'
 moment = require 'moment'
@@ -21,7 +19,7 @@ require __base + '/common/models'
 # 中間件
 app.use cors()
 app.use bodyParser.json()
-app.use bodyParser.urlencoded extended: false
+app.use bodyParser.urlencoded extended: true
 app.use multer()
 
 # 掛載路由

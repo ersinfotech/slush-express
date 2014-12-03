@@ -17,7 +17,8 @@
     "multer": "^0.1.4",
     "require-dir": "^0.1.0",
     "restrict": "git://github.com/ersinfotech/restrict",
-    "underscore": "^1.7.0"
+    "underscore": "^1.7.0",
+    "underscore.string": "^2.4.0"
   },
   "devDependencies": {
     "gulp": "^3.8.7",

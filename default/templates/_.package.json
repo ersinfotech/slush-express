@@ -13,7 +13,7 @@
     "express": "^4.8.7",
     "express-di": "^4.1.1",
     "moment": "^2.8.2",
-    "mongoose": "^3.8.15",
+    "mongoose": "3.6.x",
     "multer": "^0.1.4",
     "require-dir": "^0.1.0",
     "restrict": "git://github.com/ersinfotech/restrict",

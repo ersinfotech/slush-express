@@ -19,3 +19,9 @@ module.exports =
 
   eaccount:
     baseUrl: 'http://eaccount-api.ers.local'
+
+  elog:
+    baseUrl: 'http://elog-api.ers.local'
+
+  email:
+    baseUrl: 'http://email-api.ers.local'

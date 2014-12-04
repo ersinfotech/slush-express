@@ -3,7 +3,7 @@
 #
 
 config = require 'config'
-Restrict = require 'restrict'
+restrict = require 'restrict'
 
-module.exports = Restrict
+module.exports = restrict
   baseUrl: config.eaccount.baseUrl

@@ -2,8 +2,6 @@
 # 配置文件
 #
 
-path = require 'path'
-
 module.exports =
 
   http:

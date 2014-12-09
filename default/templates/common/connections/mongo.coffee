@@ -14,6 +14,7 @@ connection = module.exports = mongoose.createConnection mongoUri,
     keepAlive: 1
   user: config.mongo.user
   pass: config.mongo.password
+  mongos: config.mongo.mongos
 
 connection.on 'error', (err) ->
   console.error ''

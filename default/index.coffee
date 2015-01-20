@@ -17,11 +17,6 @@ gulp.task 'default', ->
       default: -> path.basename process.cwd()
     ,
       type: 'input'
-      name: 'version'
-      message: 'Version'
-      default: '0.0.0'
-    ,
-      type: 'input'
       name: 'port'
       message: 'Port used for http develop'
       default: 3000

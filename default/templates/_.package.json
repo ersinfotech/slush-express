@@ -1,6 +1,6 @@
 {
   "name": "<%= name %>",
-  "version": "<%= version %>",
+  "version": "0.0.0",
   "private": true,
   "dependencies": {
     "bluebird": "^2.3.2",
@@ -16,6 +16,7 @@
     "moment": "^2.8.2",
     "mongoose": "3.6.x",
     "multer": "^0.1.4",
+    "numeral": "^1.5.3",
     "require-dir": "^0.1.0",
     "restrict": "git://github.com/ersinfotech/restrict",
     "underscore": "^1.7.0",

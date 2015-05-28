@@ -20,11 +20,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.ers.local:generator/slush-express.git"
+    "url": "https://github.com/ersinfotech/slush-express"
   },
   "keywords": [
     "slushgenerator"
   ],
-  "author": "",
+  "author": "jarvisaoieong",
   "license": "MIT"
 }

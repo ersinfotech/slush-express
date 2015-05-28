@@ -1,5 +1,5 @@
 {
-  "name": "slush-express",
+  "name": "@ersinfotech/slush-express",
   "version": "0.0.0",
   "description": "slush-express",
   "main": "slushfile.js",

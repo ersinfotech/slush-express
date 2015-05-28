@@ -10,9 +10,10 @@ config = require 'config'
 app = module.exports = express.Router()
 
 app.use '/raml', raml
-  eadminBaseUrl: config.eadmin.baseUrl
-  clientId: config.clientId
   path: __base + '/raml'
+  baseUrl: config.http.baseUrl
+  clientId: config.clientId
+  eadminBaseUrl: config.eadmin.baseUrl
 e18n.use app
 
 # 例子

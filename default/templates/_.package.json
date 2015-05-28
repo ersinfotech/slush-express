@@ -7,7 +7,7 @@
     "start": "node-dev ."
   },
   "dependencies": {
-    "@ersinfotech/raml": "^1.0.1",
+    "@ersinfotech/raml": "^1.0.2",
     "bluebird": "^2.3.2",
     "body-parser": "^1.7.0",
     "coffee-script": "^1.8.0",

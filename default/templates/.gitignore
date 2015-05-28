@@ -13,3 +13,5 @@ tmp/*
 
 dist
 coverage
+
+raml/base_url

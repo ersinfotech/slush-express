@@ -8,6 +8,7 @@ module.exports =
 
   http:
     port: process.env.PORT or <%= port %>
+    baseUrl: ''
 
   mongo:
     uri: null

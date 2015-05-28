@@ -1,7 +1,7 @@
 slush-express
 =============
 
-ERS express generator used gulp
+ERS express generator
 
 Usage
 -----

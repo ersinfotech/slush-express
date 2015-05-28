@@ -4,6 +4,8 @@
 
 module.exports =
 
+  clientId: null
+
   http:
     port: process.env.PORT or <%= port %>
 
@@ -16,8 +18,8 @@ module.exports =
     user: null
     password: null
 
-  eaccount:
-    baseUrl: 'http://eaccount-api.ers.local'
+  eadmin:
+    baseUrl: 'http://eadmin-api.ersinfotech.com'
 
   elog:
     baseUrl: 'http://elog-api.ers.local'

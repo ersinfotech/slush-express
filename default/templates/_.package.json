@@ -2,7 +2,12 @@
   "name": "<%= name %>",
   "version": "0.0.0",
   "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "node-dev ."
+  },
   "dependencies": {
+    "@ersinfotech/raml": "^1.0.1",
     "bluebird": "^2.3.2",
     "body-parser": "^1.7.0",
     "coffee-script": "^1.8.0",
@@ -10,6 +15,7 @@
     "cookie-parser": "^1.3.3",
     "cookie-session": "^1.0.2",
     "cors": "^2.5.2",
+    "e18n": "^0.2.0",
     "elog-activity": "git://github.com/ersinfotech/elog-activity",
     "express": "^4.8.7",
     "express-di": "^4.1.1",

@@ -3,7 +3,7 @@
 #
 
 config = require 'config'
-restrict = require 'restrict'
+restrict = require '@ersinfotech/restrict'
 
 module.exports = restrict
-  baseUrl: config.eaccount.baseUrl
+  baseUrl: config.eadmin.baseUrl

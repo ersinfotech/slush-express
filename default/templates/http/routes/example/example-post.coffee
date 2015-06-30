@@ -2,7 +2,9 @@
 # 創建例子
 #
 
-module.exports = (req, res, next, Example) ->
+Example = require __base + '/common/models/example'
+
+module.exports = (req, res, next) ->
   {name} = req.body
 
   unless name

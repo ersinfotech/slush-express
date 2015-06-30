@@ -2,7 +2,9 @@
 # 單筆例子
 #
 
-module.exports = (req, res, next, Example) ->
+Example = require __base + '/common/models/example'
+
+module.exports = (req, res, next) ->
   {exampleId} = req.params
 
   Example.findById exampleId

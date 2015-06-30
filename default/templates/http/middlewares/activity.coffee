@@ -2,7 +2,7 @@
 # elog活動中間件
 #
 
-elogActivity = require 'elog-activity'
+elogActivity = require '@ersinfotech/elog-activity'
 config = require 'config'
 
 module.exports = elogActivity

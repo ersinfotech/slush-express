@@ -13,9 +13,6 @@ cors = require 'cors'
 # 創建express對象
 app = module.exports = express()
 
-# 註冊model到express-di
-require __base + '/common/models'
-
 # 中間件
 app.use cors()
 app.use bodyParser.json()

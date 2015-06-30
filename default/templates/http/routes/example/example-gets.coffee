@@ -4,7 +4,9 @@
 
 Promise = require 'bluebird'
 
-module.exports = (req, res, next, Example) ->
+Example = require __base + '/common/models/example'
+
+module.exports = (req, res, next) ->
   {name} = req.query
 
   query = Example.find()

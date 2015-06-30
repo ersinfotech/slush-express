@@ -14,6 +14,7 @@ app.use '/raml', raml
   baseUrl: config.http.baseUrl
   clientId: config.clientId
   eadminBaseUrl: config.eadmin.baseUrl
+
 e18n.use app
 
 # 例子

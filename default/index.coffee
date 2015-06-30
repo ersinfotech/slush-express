@@ -4,7 +4,6 @@ gulp = require 'gulp'
 inquirer = require 'inquirer'
 conflict = require 'gulp-conflict'
 template = require 'gulp-template'
-rename = require 'gulp-rename'
 Promise = require 'bluebird'
 
 gulp.task 'default', ->
@@ -31,26 +30,12 @@ gulp.task 'default', ->
 
     answers.repo or= "#{answers.name}/#{answers.name}"
 
-    Promise.all [
-      new Promise (resolve, reject) ->
-        gulp.src __dirname + '/templates/**/_.*'
-        .pipe template answers
-        .pipe rename (path) ->
-          path.basename = path.basename.replace /^_\./, ''
-          path
-        .pipe conflict '.'
-        .pipe gulp.dest '.'
-        .on 'end', resolve
-    ,
-      new Promise (resolve, reject) ->
-        gulp.src [
-          __dirname + '/templates/**'
-          "!" + __dirname + "/templates/**/_.*"
-        ], {dot: true}
-        .pipe conflict '.'
-        .pipe gulp.dest '.'
-        .on 'end', resolve
-    ]
+    new Promise (resolve, reject) ->
+      gulp.src __dirname + '/templates/**', {dot: true}
+      .pipe template answers
+      .pipe conflict '.'
+      .pipe gulp.dest '.'
+      .on 'end', resolve
 
   .catch console.error
 

@@ -1,6 +1,6 @@
 {
   "name": "@ersinfotech/slush-express",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "slush-express",
   "main": "slushfile.js",
   "dependencies": {

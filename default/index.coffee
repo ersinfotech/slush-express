@@ -17,11 +17,6 @@ gulp.task 'default', ->
       default: -> path.basename process.cwd()
     ,
       type: 'input'
-      name: 'port'
-      message: 'Port used for http develop'
-      default: 3000
-    ,
-      type: 'input'
       name: 'repo'
       message: 'Repo name. E.g. repoGroup/repoName'
     ,

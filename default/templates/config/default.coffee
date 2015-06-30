@@ -7,7 +7,7 @@ module.exports =
   clientId: null
 
   http:
-    port: process.env.PORT or <%= port %>
+    port: process.env.PORT or 3000
     baseUrl: ''
 
   mongo:

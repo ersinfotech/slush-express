@@ -5,10 +5,11 @@
 require '../init'
 
 express = require 'express'
+cors = require 'cors'
 bodyParser = require 'body-parser'
 multer = require 'multer'
-moment = require 'moment'
-cors = require 'cors'
+
+logger = require __base + '/common/helpers/logger'
 
 # 創建express對象
 app = module.exports = express()
@@ -26,17 +27,10 @@ app.use require './routes/router'
 app.use (err, req, res, next) ->
   if err instanceof Error400
     return res.status(400).send error: err.message
-
-  console.error ''
-  console.error "[ERROR] #{moment().format('YYYY-MM-DD HH:mm:ss')} Handled error"
-  console.error err.stack
-
+  logger.error err
   res.status(500).send error: err.message
 
 # Process error handler
 process.on 'uncaughtException', (err) ->
-  console.error ''
-  console.error "[ERROR] #{moment().format('YYYY-MM-DD HH:mm:ss')} Uncaught exception"
-  console.error err.stack
-
+  logger.fatal err
   process.exit()

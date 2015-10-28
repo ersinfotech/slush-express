@@ -10,6 +10,8 @@ module.exports =
     port: process.env.PORT or 3000
     baseUrl: ''
 
+  logPath: __dirname + '/../log'
+
   mongo:
     uri: null
     mongos: false
